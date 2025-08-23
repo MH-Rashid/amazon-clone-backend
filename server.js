@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3100;
 // Connect to MongoDB
 connectDB();
 
-// custom middleware logger
+// Custom middleware request logger
 app.use(logger);
 
 // Handle credentials check before CORS

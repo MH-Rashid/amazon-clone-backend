@@ -5,14 +5,14 @@ const orderSchema = new Schema(
   {
     _id: { type: String, required: true },
     username: { type: String, required: true },
-    items: [
+    products: [
       {
-        id: { type: String, required: true },
-        name: { type: String, required: true },
+        productId: { type: String, required: true },
         quantity: { type: Number, required: true },
-        price: { type: Number, required: true },
+        estimatedDeliveryTime: { type: String, required: true },
       },
     ],
+    totalCostCents: { type: Number, required: true }
   },
   { timestamps: true }
 );

@@ -53,8 +53,11 @@ const handleLogin = async (req, res) => {
           username: foundUser.username,
         },
       });
-
       // Also save accessToken on client side, e.g. in localStorage or sessionStorage.
+
+    } else {
+      console.error("Passwords do not match");
+      return res.status(401).json({ message: "Password is incorrect." });
     }
   } catch (err) {
     console.error("Error occurred while comparing passwords:", err);
