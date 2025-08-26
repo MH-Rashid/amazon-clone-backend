@@ -6,6 +6,5 @@ router
   .route("/")
   .get(ordersController.getAllOrders)
   .post(ordersController.createNewOrder)
-  .delete(ordersController.deleteOrder);
 
 module.exports = router;

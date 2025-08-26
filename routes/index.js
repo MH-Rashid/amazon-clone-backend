@@ -14,10 +14,7 @@ router.use('/login', loginRoute);
 router.use('/logout', logoutRoute);
 router.use('/refresh', refreshRoute);
 
-router.use('/products', productsRoute);
-// router.use('/products', verifyJWT, productsRoute);
-
-router.use('/orders', ordersRoutes);
-// router.use('/orders', verifyJWT, ordersRoutes);
+router.use('/products', verifyJWT, productsRoute);
+router.use('/orders', verifyJWT, ordersRoutes);
 
 module.exports = router;
