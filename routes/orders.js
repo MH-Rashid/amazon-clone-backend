@@ -7,4 +7,8 @@ router
   .get(ordersController.getAllOrders)
   .post(ordersController.createNewOrder)
 
+router
+  .route("/:id")
+  .get(ordersController.getOrder)
+
 module.exports = router;

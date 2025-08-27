@@ -30,7 +30,14 @@ const createNewOrder = async (req, res) => {
   }
 };
 
+const getOrder = async (req, res) => {
+  const order = await Order.findOne({ _id: req.params.id }).exec();
+  if (!order) return res.status(204).json({ ok: false, message: "No matching order found." });
+  res.json({ ok: true, order });
+};
+
 module.exports = {
   getAllOrders,
   createNewOrder,
+  getOrder,
 };
