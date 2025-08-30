@@ -8,7 +8,7 @@ const verifyJWT = (req, res, next) => {
     token,
     process.env.ACCESS_TOKEN_SECRET,
     (err, decoded) => {
-      if (err) return res.status(401).json({ message: "Login expired" });
+      if (err) return res.status(401).json({ message: "Please login again" });
       req.user = decoded.UserInfo.username; // attach username to request object for downstream use
       next()
     }
